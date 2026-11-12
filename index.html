@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Show na Mão Plus</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<p class="note">Protótipo. Hugo Lins é real; os outros artistas, shows e valores são exemplos. A IA é real quando você permite.</p>
+<header class="top"><div class="top-in">
+  <a class="brand" href="#inicio">Show na Mão<span>+</span></a>
+  <nav class="links" id="links" aria-label="Seções"></nav>
+  <nav class="side" aria-label="Lado"><a href="#inicio" aria-current="true">Contratar</a><a href="#ag-maestro">Sou músico</a></nav>
+  <button class="theme-toggle" data-act="toggle-theme" type="button" aria-label="Alternar para o tema escuro" aria-pressed="false"></button>
+</div></header>
+<main id="vitrine" tabindex="-1">
+  <div class="page">
+    <section class="section narrow">
+      <h1>Show na Mão Plus</h1>
+      <p class="lede">Inicie o servidor de desenvolvimento para carregar a aplicação TypeScript: execute <code>npm install</code> e depois <code>npm run dev</code>.</p>
+    </section>
+  </div>
+</main>
+
+<div class="studio" id="studio">
+  <aside class="desk" id="desk" aria-label="Seu time"></aside>
+  <section class="mainpane" aria-live="polite">
+    <header class="chathead" id="chathead"></header>
+    <div class="scroll" id="scroll"><div id="pane"></div></div>
+    <div class="transport" id="transport">
+      <div class="transport-in">
+        <form class="ask" id="askForm" autocomplete="off">
+          <button type="button" class="icon" id="attachBtn" aria-label="Anexar áudio" hidden><svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m8 12.5 7.1-7.1a3.5 3.5 0 0 1 5 5L10 20.5a5 5 0 0 1-7.1-7.1l9.2-9.2"/></svg></button>
+          <label class="sr" for="askInput">Mensagem</label>
+          <textarea id="askInput" rows="1"></textarea>
+          <button type="button" class="icon rec" id="micBtn" aria-label="Falar em vez de digitar" hidden><svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0m-7 7v3m-4 0h8"/></svg></button>
+          <button type="submit" class="icon send" aria-label="Enviar"><svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button>
+        </form>
+        <p class="hint" id="hint"></p>
+      </div>
+    </div>
+  </section>
+  <div class="scrim" data-act="close-desk"></div>
+</div>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheetTitle"><div class="sheet-body" id="sheetBody"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<input type="file" id="fileImport" accept=".json,application/json" hidden>
+<input type="file" id="fileBackup" accept=".json,application/json" hidden>
+<input type="file" id="fileAudio" accept="audio/*" hidden>
+
+<script type="module" src="./src/app.ts"></script>
+</body>
+</html>
